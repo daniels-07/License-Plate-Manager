@@ -26,5 +26,10 @@ namespace Vehicle_tracking_app
         {
 
         }
+
+        private void binary_searchbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

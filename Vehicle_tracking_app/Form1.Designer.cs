@@ -114,12 +114,13 @@
             // 
             // binary_searchbtn
             // 
-            this.binary_searchbtn.Location = new System.Drawing.Point(171, 340);
+            this.binary_searchbtn.Location = new System.Drawing.Point(194, 340);
             this.binary_searchbtn.Name = "binary_searchbtn";
             this.binary_searchbtn.Size = new System.Drawing.Size(94, 23);
             this.binary_searchbtn.TabIndex = 9;
             this.binary_searchbtn.Text = "Binary Search";
             this.binary_searchbtn.UseVisualStyleBackColor = true;
+            this.binary_searchbtn.Click += new System.EventHandler(this.binary_searchbtn_Click);
             // 
             // Linear_searchbtn
             // 
