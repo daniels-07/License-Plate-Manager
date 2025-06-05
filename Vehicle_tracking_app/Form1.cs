@@ -15,6 +15,10 @@ namespace Vehicle_tracking_app
         public Form1()
         {
             InitializeComponent();
+
+            List<string> main = new List<string>();
+            List<string> tagged = new List<string>();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
