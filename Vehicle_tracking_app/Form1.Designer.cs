@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.reset_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // main_listbox
@@ -63,7 +64,7 @@
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(29, 368);
+            this.edit_button.Location = new System.Drawing.Point(146, 358);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(75, 23);
             this.edit_button.TabIndex = 2;
@@ -73,14 +74,15 @@
             // 
             // entry_txtbox
             // 
-            this.entry_txtbox.Location = new System.Drawing.Point(124, 314);
+            this.entry_txtbox.Location = new System.Drawing.Point(112, 326);
             this.entry_txtbox.Name = "entry_txtbox";
-            this.entry_txtbox.Size = new System.Drawing.Size(100, 20);
+            this.entry_txtbox.Size = new System.Drawing.Size(137, 20);
             this.entry_txtbox.TabIndex = 3;
+            this.entry_txtbox.TextChanged += new System.EventHandler(this.entry_txtbox_TextChanged);
             // 
             // enter_button
             // 
-            this.enter_button.Location = new System.Drawing.Point(138, 369);
+            this.enter_button.Location = new System.Drawing.Point(45, 358);
             this.enter_button.Name = "enter_button";
             this.enter_button.Size = new System.Drawing.Size(75, 23);
             this.enter_button.TabIndex = 4;
@@ -107,7 +109,7 @@
             // 
             // binary_searchbtn
             // 
-            this.binary_searchbtn.Location = new System.Drawing.Point(194, 340);
+            this.binary_searchbtn.Location = new System.Drawing.Point(83, 428);
             this.binary_searchbtn.Name = "binary_searchbtn";
             this.binary_searchbtn.Size = new System.Drawing.Size(94, 23);
             this.binary_searchbtn.TabIndex = 9;
@@ -117,21 +119,23 @@
             // 
             // Linear_searchbtn
             // 
-            this.Linear_searchbtn.Location = new System.Drawing.Point(55, 339);
+            this.Linear_searchbtn.Location = new System.Drawing.Point(183, 428);
             this.Linear_searchbtn.Name = "Linear_searchbtn";
             this.Linear_searchbtn.Size = new System.Drawing.Size(94, 23);
             this.Linear_searchbtn.TabIndex = 10;
             this.Linear_searchbtn.Text = "Linear Search";
             this.Linear_searchbtn.UseVisualStyleBackColor = true;
+            this.Linear_searchbtn.Click += new System.EventHandler(this.Linear_searchbtn_Click);
             // 
             // tag_button
             // 
-            this.tag_button.Location = new System.Drawing.Point(253, 369);
+            this.tag_button.Location = new System.Drawing.Point(245, 358);
             this.tag_button.Name = "tag_button";
             this.tag_button.Size = new System.Drawing.Size(75, 23);
             this.tag_button.TabIndex = 11;
             this.tag_button.Text = "Tag Plate";
             this.tag_button.UseVisualStyleBackColor = true;
+            this.tag_button.Click += new System.EventHandler(this.tag_button_Click);
             // 
             // label1
             // 
@@ -172,12 +176,20 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "                    \r\n\r\n\r\n\r\n \r\n";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(112, 402);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(137, 20);
+            this.textBox1.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(356, 403);
+            this.ClientSize = new System.Drawing.Size(356, 463);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -215,6 +227,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button reset_button;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
