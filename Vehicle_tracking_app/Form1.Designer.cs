@@ -34,12 +34,14 @@
             this.entry_txtbox = new System.Windows.Forms.TextBox();
             this.enter_button = new System.Windows.Forms.Button();
             this.exit_button = new System.Windows.Forms.Button();
-            this.reset_button = new System.Windows.Forms.Button();
             this.tagged_listbox = new System.Windows.Forms.ListBox();
             this.binary_searchbtn = new System.Windows.Forms.Button();
             this.Linear_searchbtn = new System.Windows.Forms.Button();
             this.tag_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.reset_button = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // main_listbox
@@ -95,15 +97,6 @@
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = true;
             // 
-            // reset_button
-            // 
-            this.reset_button.Location = new System.Drawing.Point(253, 99);
-            this.reset_button.Name = "reset_button";
-            this.reset_button.Size = new System.Drawing.Size(75, 23);
-            this.reset_button.TabIndex = 7;
-            this.reset_button.Text = "Reset";
-            this.reset_button.UseVisualStyleBackColor = true;
-            // 
             // tagged_listbox
             // 
             this.tagged_listbox.FormattingEnabled = true;
@@ -143,17 +136,50 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 18);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(212, 26);
             this.label1.TabIndex = 12;
             this.label1.Text = "Active Systems PTY";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(42, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 17);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "License Plate Management";
+            // 
+            // reset_button
+            // 
+            this.reset_button.Location = new System.Drawing.Point(253, 99);
+            this.reset_button.Name = "reset_button";
+            this.reset_button.Size = new System.Drawing.Size(75, 23);
+            this.reset_button.TabIndex = 7;
+            this.reset_button.Text = "Reset";
+            this.reset_button.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Image = global::Vehicle_tracking_app.Properties.Resources.logo__1__removebg_preview;
+            this.label3.Location = new System.Drawing.Point(242, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 65);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "                    \r\n\r\n\r\n\r\n \r\n";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(353, 403);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(356, 403);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tag_button);
             this.Controls.Add(this.Linear_searchbtn);
@@ -181,12 +207,14 @@
         private System.Windows.Forms.TextBox entry_txtbox;
         private System.Windows.Forms.Button enter_button;
         private System.Windows.Forms.Button exit_button;
-        private System.Windows.Forms.Button reset_button;
         private System.Windows.Forms.ListBox tagged_listbox;
         private System.Windows.Forms.Button binary_searchbtn;
         private System.Windows.Forms.Button Linear_searchbtn;
         private System.Windows.Forms.Button tag_button;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button reset_button;
+        private System.Windows.Forms.Label label3;
     }
 }
 
