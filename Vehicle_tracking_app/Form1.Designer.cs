@@ -43,6 +43,8 @@
             this.reset_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.display_btn = new System.Windows.Forms.Button();
+            this.display_btn2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // main_listbox
@@ -55,7 +57,7 @@
             // 
             // open_button
             // 
-            this.open_button.Location = new System.Drawing.Point(29, 99);
+            this.open_button.Location = new System.Drawing.Point(29, 80);
             this.open_button.Name = "open_button";
             this.open_button.Size = new System.Drawing.Size(75, 23);
             this.open_button.TabIndex = 1;
@@ -92,7 +94,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.Location = new System.Drawing.Point(138, 99);
+            this.exit_button.Location = new System.Drawing.Point(137, 80);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(75, 23);
             this.exit_button.TabIndex = 5;
@@ -159,7 +161,7 @@
             // 
             // reset_button
             // 
-            this.reset_button.Location = new System.Drawing.Point(253, 99);
+            this.reset_button.Location = new System.Drawing.Point(253, 80);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(75, 23);
             this.reset_button.TabIndex = 7;
@@ -183,12 +185,33 @@
             this.textBox1.Size = new System.Drawing.Size(137, 20);
             this.textBox1.TabIndex = 15;
             // 
+            // display_btn
+            // 
+            this.display_btn.Location = new System.Drawing.Point(29, 119);
+            this.display_btn.Name = "display_btn";
+            this.display_btn.Size = new System.Drawing.Size(75, 23);
+            this.display_btn.TabIndex = 16;
+            this.display_btn.Text = "Display";
+            this.display_btn.UseVisualStyleBackColor = true;
+            this.display_btn.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // display_btn2
+            // 
+            this.display_btn2.Location = new System.Drawing.Point(253, 119);
+            this.display_btn2.Name = "display_btn2";
+            this.display_btn2.Size = new System.Drawing.Size(75, 23);
+            this.display_btn2.TabIndex = 17;
+            this.display_btn2.Text = "Display";
+            this.display_btn2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(356, 463);
+            this.Controls.Add(this.display_btn2);
+            this.Controls.Add(this.display_btn);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -228,6 +251,8 @@
         private System.Windows.Forms.Button reset_button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button display_btn;
+        private System.Windows.Forms.Button display_btn2;
     }
 }
 
