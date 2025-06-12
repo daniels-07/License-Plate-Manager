@@ -30,6 +30,10 @@ namespace Vehicle_tracking_app
              {
                  //enter_entry(s, args); WIP
              };
+            exit_button.Click += (s, args) =>
+            {
+
+            };              
             display_btn.Click += (s, args) =>
             {
                 display_main_list(s, args);
@@ -41,6 +45,22 @@ namespace Vehicle_tracking_app
             reset_button.Click += (s, args) =>
             {
                 reset(s, args);
+            };
+            edit_button.Click += (s, args) =>
+            {
+
+            };
+            tag_button.Click += (s, args) =>
+            {
+
+            };
+            binary_searchbtn.Click += (s, args) =>
+            {
+
+            };
+            Linear_searchbtn.Click += (s, args) =>
+            {
+
             };
 
         }
