@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,14 +28,19 @@ namespace Vehicle_tracking_app
 
             enter_button.Click += (s, args) =>
              {
-                 string input = entry_txtbox.Text;
-                 main.Add(input);
-                 entry_txtbox.Clear();
-                 
+                 //enter_entry(s, args); WIP
              };
             display_btn.Click += (s, args) =>
             {
                 display_main_list(s, args);
+            };
+            display_btn2.Click += (s, args) =>
+            {
+                display_tagged_list(s, args);
+            };
+            reset_button.Click += (s, args) =>
+            {
+                reset(s, args);
             };
 
         }
@@ -56,8 +62,58 @@ namespace Vehicle_tracking_app
         {
             foreach (string item in main)
             {
-                main_listbox.Items.Add(item);
+                //Display untagged entries in the main listbox
+                if (item.StartsWith("[UnTagged]"))
+                {
+                    main_listbox.Items.Clear();
+                    string cleanedLine = item.Substring("[UnTagged]".Length).Trim();
+                    main_listbox.Items.Add(cleanedLine);
+                }
+                else
+                {
+
+                }
             }
+        }
+        private void display_tagged_list(object sender, EventArgs e)
+        {
+            foreach (string item in main)
+            {
+                //Display tagged entries in the tagged listbox
+                if (item.StartsWith("[Tagged]"))
+                {
+                    tagged_listbox.Items.Clear();
+                    string cleanedLine2 = item.Substring("[Tagged]".Length).Trim();
+                    tagged_listbox.Items.Add(cleanedLine2);
+                }
+                else
+                {
+
+                }
+            }
+        }
+        /*private void enter_entry(object sender, EventArgs e)
+        {
+            string new_entry = entry_txtbox.Text.Trim();
+
+            if (string.IsNullOrEmpty(new_entry)) //Must remember to add filter
+            {
+
+            }
+            else if (!string.IsNullOrEmpty(new_entry))
+            {
+                //Add the new entry to the loaded text file
+                File.AppendAllText(filepath, new_entry + Environment.NewLine);
+            }
+            else
+            {
+                MessageBox.Show("No file to write to. Please load the file.");
+            }
+        }*/
+        private void reset(object sender, EventArgs e)
+        {
+            main_listbox.Items.Clear();
+            tagged_listbox.Items.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
