@@ -60,13 +60,14 @@ namespace Vehicle_tracking_app
         }
         private void display_main_list(object sender, EventArgs e)
         {
-            foreach (string item in main)
+            main.Sort();
+            main_listbox.Items.Clear();
+            foreach (string line in main)
             {
                 //Display untagged entries in the main listbox
-                if (item.StartsWith("[UnTagged]"))
+                if (line.StartsWith("[UnTagged]"))
                 {
-                    main_listbox.Items.Clear();
-                    string cleanedLine = item.Substring("[UnTagged]".Length).Trim();
+                    string cleanedLine = line.Substring("[UnTagged]".Length).Trim(); //Note: The program seems to be writing the tagged entries to the main list and vice versa, fix this later
                     main_listbox.Items.Add(cleanedLine);
                 }
                 else
@@ -77,13 +78,14 @@ namespace Vehicle_tracking_app
         }
         private void display_tagged_list(object sender, EventArgs e)
         {
-            foreach (string item in main)
+            tagged.Sort();
+            tagged_listbox.Items.Clear();
+            foreach (string line in main)
             {
                 //Display tagged entries in the tagged listbox
-                if (item.StartsWith("[Tagged]"))
+                if (line.StartsWith("[Tagged]"))
                 {
-                    tagged_listbox.Items.Clear();
-                    string cleanedLine2 = item.Substring("[Tagged]".Length).Trim();
+                    string cleanedLine2 = line.Substring("[Tagged]".Length).Trim();
                     tagged_listbox.Items.Add(cleanedLine2);
                 }
                 else
