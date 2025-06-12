@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.reset_button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.search_txtbox = new System.Windows.Forms.TextBox();
             this.display_btn = new System.Windows.Forms.Button();
             this.display_btn2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -178,12 +178,12 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "                    \r\n\r\n\r\n\r\n \r\n";
             // 
-            // textBox1
+            // search_txtbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 402);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 15;
+            this.search_txtbox.Location = new System.Drawing.Point(112, 402);
+            this.search_txtbox.Name = "search_txtbox";
+            this.search_txtbox.Size = new System.Drawing.Size(137, 20);
+            this.search_txtbox.TabIndex = 15;
             // 
             // display_btn
             // 
@@ -212,7 +212,7 @@
             this.ClientSize = new System.Drawing.Size(356, 463);
             this.Controls.Add(this.display_btn2);
             this.Controls.Add(this.display_btn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.search_txtbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -250,7 +250,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button reset_button;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox search_txtbox;
         private System.Windows.Forms.Button display_btn;
         private System.Windows.Forms.Button display_btn2;
     }

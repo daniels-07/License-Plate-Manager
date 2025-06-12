@@ -19,6 +19,11 @@ namespace Vehicle_tracking_app
             List<string> main = new List<string>();
             List<string> tagged = new List<string>();
 
+            open_button.Click += (s, args) =>
+            {
+                load_file(s, args);
+            };
+
             enter_button.Click += (s, args) =>
              {
                  string input = entry_txtbox.Text;
@@ -26,6 +31,19 @@ namespace Vehicle_tracking_app
                  entry_txtbox.Clear();
                  
              };
+
+        }
+        private void load_file(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            openFile.Title = "Please select a file";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                string filepath = openFile.FileName;
+
+                entry_txtbox.Text = $"You have selected: {filepath}";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
