@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,12 @@ namespace Vehicle_tracking_app
 {
     public partial class Form1 : Form
     {
+
+        List<string> main = new List<string>();
+        List<string> tagged = new List<string>();
         public Form1()
         {
             InitializeComponent();
-
-            List<string> main = new List<string>();
-            List<string> tagged = new List<string>();
 
             open_button.Click += (s, args) =>
             {
@@ -31,6 +32,10 @@ namespace Vehicle_tracking_app
                  entry_txtbox.Clear();
                  
              };
+            display_btn.Click += (s, args) =>
+            {
+                display_main_list(s, args);
+            };
 
         }
         private void load_file(object sender, EventArgs e)
@@ -42,7 +47,16 @@ namespace Vehicle_tracking_app
             {
                 string filepath = openFile.FileName;
 
+                main = File.ReadAllLines(filepath).ToList();
+
                 entry_txtbox.Text = $"You have selected: {filepath}";
+            }
+        }
+        private void display_main_list(object sender, EventArgs e)
+        {
+            foreach (string item in main)
+            {
+                main_listbox.Items.Add(item);
             }
         }
 
