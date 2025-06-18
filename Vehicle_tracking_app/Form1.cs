@@ -29,6 +29,9 @@ namespace Vehicle_tracking_app
             tagged_listbox.MouseDoubleClick += tagged_listbox_MouseDoubleClick;
             main_listbox.MouseClick += main_listbox_MouseClick;
             tagged_listbox.MouseClick += tagged_listbox_MouseClick;
+            main_listbox.SelectedIndexChanged += main_Listbox_selectedIndexChanged;
+            tagged_listbox.SelectedIndexChanged += tagged_Listbox_selectedIndexChanged;
+            search_mainList.Checked = true;
 
             save_btn.Click += (s, args) =>
             {
@@ -68,7 +71,7 @@ namespace Vehicle_tracking_app
             };
             tag_button.Click += (s, args) =>
             {
-
+                tag_plate(s, args);
             };
             binary_searchbtn.Click += (s, args) =>
             {
@@ -76,7 +79,7 @@ namespace Vehicle_tracking_app
             };
             Linear_searchbtn.Click += (s, args) =>
             {
-
+                linear_search(s, args);
             };
 
         }
@@ -219,7 +222,7 @@ namespace Vehicle_tracking_app
             selectedIndex = tagged_listbox.IndexFromPoint(e.Location);
             if (selectedIndex != ListBox.NoMatches)
             {
-                string selectedItem = main_listbox.Items[selectedIndex].ToString();
+                string selectedItem = tagged_listbox.Items[selectedIndex].ToString();
                 editplate_txtbox.Text = selectedItem;
                 selectedList = "tagged";
             }
@@ -329,15 +332,156 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
             }
-            int index = main.BinarySearch("[UnTagged]" + searchEntry);
-            if (index >= 0)
+
+            if (search_mainList.Checked)
             {
-                Error_txtbox.Text = $"Found '{searchEntry}' at index {index} in the main list.";
-                main_listbox.SelectedIndex = index;
+                int index = main.BinarySearch("[UnTagged]" + searchEntry);
+                if (index >= 0)
+                {
+                    Error_txtbox.Text = $"Found '{searchEntry}' at index {index} in the main list.";
+                    main_listbox.SelectedIndex = index;
+                }
+                else
+                {
+                    Error_txtbox.Text = $"'{searchEntry}' not found in the main list.";
+                }
+            }
+            else if (search_TaggedList.Checked)
+            {
+                int index = tagged.BinarySearch("[Tagged]" + searchEntry);
+                if (index >= 0)
+                {
+                    Error_txtbox.Text = $"Found '{searchEntry}' at index {index} in the tagged list.";
+                    main_listbox.SelectedIndex = index;
+                }
+                else
+                {
+                    Error_txtbox.Text = $"'{searchEntry}' not found in the tagged list.";
+                }
+            }
+            
+        }
+        private void linear_search(object sender, EventArgs e)
+        {
+            string searchEntry = search_txtbox.Text.Trim();
+            string formattedsearch = "[UnTagged]" + searchEntry;
+            string formattedsearchTagged = "[Tagged]" + searchEntry;
+            bool isfound = false;
+
+            if (string.IsNullOrEmpty(searchEntry))
+            {
+                Error_txtbox.Text = "Please enter a value to search for.";
+                return;
+            }
+            if (!Regex.IsMatch(searchEntry, @"^[A-Z]{3}[0-9]{3}$"))
+            {
+                Error_txtbox.Text = "Please enter a valid number plate.";
+                return;
+            }
+            if (search_mainList.Checked)
+            {
+                for (int i = 0; i < main.Count; i++)
+                {
+                    if (main[i].Equals(formattedsearch, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Error_txtbox.Text = $"Found '{searchEntry}' at index {i} in the main list.";
+
+                        main_listbox.Items.Clear();
+                        foreach (var line in main)
+                        {
+                            string cleaned = line.Substring("[UnTagged]".Length).Trim();
+                            main_listbox.Items.Add(cleaned);
+                        }
+                        isfound = true;
+                        break;
+                    }
+                }
+                if (!isfound)
+                {
+                    Error_txtbox.Text = $"'{searchEntry}' not found in the main list.";
+                    main_listbox.ClearSelected();
+                }
+            }
+            else if (search_TaggedList.Checked)
+            {
+                for (int i = 0; i < tagged.Count; i++)
+                {
+                    if (tagged[i].Equals(formattedsearchTagged, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Error_txtbox.Text = $"Found '{searchEntry}' at index {i} in the tagged list.";
+
+                        tagged_listbox.Items.Clear();
+                        foreach (var line in tagged)
+                        {
+                            string cleaned = line.Substring("[Tagged]".Length).Trim();
+                            tagged_listbox.Items.Add(cleaned);
+                        }
+                        isfound = true;
+                        break;
+                    }
+                }
+                if (!isfound)
+                {
+                    Error_txtbox.Text = $"'{searchEntry}' not found in the tagged list.";
+                    main_listbox.ClearSelected();
+                }
+            }
+        }
+        private void tag_plate(object sender, EventArgs e)
+        {
+            string selectedText = "";
+            bool isMainSelected = false;
+
+            if (main_listbox.SelectedItem != null)
+            {
+                selectedText = main_listbox.SelectedItem.ToString();
+                isMainSelected = true;
+            }
+            else if (tagged_listbox.SelectedItem != null)
+            {
+                selectedText = tagged_listbox.SelectedItem.ToString();
             }
             else
             {
-                Error_txtbox.Text = $"'{searchEntry}' not found in the main list.";
+                Error_txtbox.Text = "Please select an entry to tag or untag.";
+                return;
+            }
+
+            if (isMainSelected)
+            {
+                main.Remove("[UnTagged]" + selectedText);
+                tagged.Add("[Tagged]" + selectedText);
+
+                Error_txtbox.Text = $"Tagged: {selectedText}";
+            }
+            else
+            {
+                tagged.Remove("[Tagged]" + selectedText);
+                main.Add("[UnTagged]" + selectedText);
+
+                Error_txtbox.Text = $"Untagged: {selectedText}";
+            }
+
+            tagged_listbox.ClearSelected();
+            main_listbox.ClearSelected();
+
+            main = main.OrderBy(x => x.Substring("[UnTagged]".Length)).ToList();
+            tagged = tagged.OrderBy(x => x.Substring("[Tagged]".Length)).ToList();
+
+            Error_txtbox.Text = "Entry tag sucessfully changed";
+        }
+        private void main_Listbox_selectedIndexChanged(object sender, EventArgs e)
+        {
+            if (main_listbox.SelectedIndex != -1)
+            {
+                tagged_listbox.ClearSelected();
+            }
+        }
+        private void tagged_Listbox_selectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tagged_listbox.SelectedIndex != -1)
+            {
+                main_listbox.ClearSelected();
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -401,6 +545,11 @@ namespace Vehicle_tracking_app
         }
 
         private void button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -53,6 +53,10 @@
             this.search_label = new System.Windows.Forms.Label();
             this.save_btn = new System.Windows.Forms.Button();
             this.saveAs_btn = new System.Windows.Forms.Button();
+            this.list_search_groupbox = new System.Windows.Forms.GroupBox();
+            this.search_mainList = new System.Windows.Forms.RadioButton();
+            this.search_TaggedList = new System.Windows.Forms.RadioButton();
+            this.list_search_groupbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_listbox
@@ -128,7 +132,7 @@
             // 
             // binary_searchbtn
             // 
-            this.binary_searchbtn.Location = new System.Drawing.Point(112, 562);
+            this.binary_searchbtn.Location = new System.Drawing.Point(39, 571);
             this.binary_searchbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.binary_searchbtn.Name = "binary_searchbtn";
             this.binary_searchbtn.Size = new System.Drawing.Size(125, 28);
@@ -139,7 +143,7 @@
             // 
             // Linear_searchbtn
             // 
-            this.Linear_searchbtn.Location = new System.Drawing.Point(245, 562);
+            this.Linear_searchbtn.Location = new System.Drawing.Point(40, 607);
             this.Linear_searchbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Linear_searchbtn.Name = "Linear_searchbtn";
             this.Linear_searchbtn.Size = new System.Drawing.Size(125, 28);
@@ -204,7 +208,7 @@
             // 
             // search_txtbox
             // 
-            this.search_txtbox.Location = new System.Drawing.Point(150, 530);
+            this.search_txtbox.Location = new System.Drawing.Point(40, 541);
             this.search_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_txtbox.Name = "search_txtbox";
             this.search_txtbox.Size = new System.Drawing.Size(181, 22);
@@ -279,7 +283,7 @@
             // search_label
             // 
             this.search_label.AutoSize = true;
-            this.search_label.Location = new System.Drawing.Point(147, 510);
+            this.search_label.Location = new System.Drawing.Point(40, 521);
             this.search_label.Name = "search_label";
             this.search_label.Size = new System.Drawing.Size(153, 16);
             this.search_label.TabIndex = 23;
@@ -304,12 +308,47 @@
             this.saveAs_btn.Text = "Save As";
             this.saveAs_btn.UseVisualStyleBackColor = true;
             // 
+            // list_search_groupbox
+            // 
+            this.list_search_groupbox.Controls.Add(this.search_TaggedList);
+            this.list_search_groupbox.Controls.Add(this.search_mainList);
+            this.list_search_groupbox.Location = new System.Drawing.Point(238, 557);
+            this.list_search_groupbox.Name = "list_search_groupbox";
+            this.list_search_groupbox.Size = new System.Drawing.Size(200, 84);
+            this.list_search_groupbox.TabIndex = 26;
+            this.list_search_groupbox.TabStop = false;
+            this.list_search_groupbox.Text = "Select List to search";
+            this.list_search_groupbox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // search_mainList
+            // 
+            this.search_mainList.AutoSize = true;
+            this.search_mainList.Location = new System.Drawing.Point(6, 21);
+            this.search_mainList.Name = "search_mainList";
+            this.search_mainList.Size = new System.Drawing.Size(80, 20);
+            this.search_mainList.TabIndex = 0;
+            this.search_mainList.TabStop = true;
+            this.search_mainList.Text = "Main List";
+            this.search_mainList.UseVisualStyleBackColor = true;
+            // 
+            // search_TaggedList
+            // 
+            this.search_TaggedList.AutoSize = true;
+            this.search_TaggedList.Location = new System.Drawing.Point(6, 47);
+            this.search_TaggedList.Name = "search_TaggedList";
+            this.search_TaggedList.Size = new System.Drawing.Size(100, 20);
+            this.search_TaggedList.TabIndex = 1;
+            this.search_TaggedList.TabStop = true;
+            this.search_TaggedList.Text = "Tagged List";
+            this.search_TaggedList.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(475, 613);
+            this.ClientSize = new System.Drawing.Size(475, 653);
+            this.Controls.Add(this.list_search_groupbox);
             this.Controls.Add(this.saveAs_btn);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.search_label);
@@ -338,6 +377,8 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Active Systems PTY";
+            this.list_search_groupbox.ResumeLayout(false);
+            this.list_search_groupbox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,6 +411,9 @@
         private System.Windows.Forms.Label search_label;
         private System.Windows.Forms.Button save_btn;
         private System.Windows.Forms.Button saveAs_btn;
+        private System.Windows.Forms.GroupBox list_search_groupbox;
+        private System.Windows.Forms.RadioButton search_TaggedList;
+        private System.Windows.Forms.RadioButton search_mainList;
     }
 }
 
