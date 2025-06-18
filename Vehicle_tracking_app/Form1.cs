@@ -75,7 +75,7 @@ namespace Vehicle_tracking_app
 
                 main = File.ReadAllLines(filepath).ToList();
 
-                entry_txtbox.Text = $"You have selected: {filepath}";
+                Error_txtbox.Text = $"You have selected: {filepath}";
             }
         }
         private void display_main_list(object sender, EventArgs e)
@@ -179,6 +179,21 @@ namespace Vehicle_tracking_app
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click_2(object sender, EventArgs e)
         {
 
         }
