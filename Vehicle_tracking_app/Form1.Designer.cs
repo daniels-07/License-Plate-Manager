@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.main_listbox = new System.Windows.Forms.ListBox();
             this.open_button = new System.Windows.Forms.Button();
             this.edit_button = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             this.list_search_groupbox = new System.Windows.Forms.GroupBox();
             this.search_mainList = new System.Windows.Forms.RadioButton();
             this.search_TaggedList = new System.Windows.Forms.RadioButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.list_search_groupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,25 +70,28 @@
             this.main_listbox.Name = "main_listbox";
             this.main_listbox.Size = new System.Drawing.Size(159, 196);
             this.main_listbox.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.main_listbox, "Untagged entries are displayed here");
             // 
             // open_button
             // 
-            this.open_button.Location = new System.Drawing.Point(40, 133);
+            this.open_button.Location = new System.Drawing.Point(39, 154);
             this.open_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.open_button.Name = "open_button";
             this.open_button.Size = new System.Drawing.Size(100, 28);
             this.open_button.TabIndex = 1;
             this.open_button.Text = "Open";
+            this.toolTip1.SetToolTip(this.open_button, "Used to load a document");
             this.open_button.UseVisualStyleBackColor = true;
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(231, 532);
+            this.edit_button.Location = new System.Drawing.Point(203, 532);
             this.edit_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(100, 28);
             this.edit_button.TabIndex = 2;
             this.edit_button.Text = "Edit";
+            this.toolTip1.SetToolTip(this.edit_button, "This button applies changes to the selected entry");
             this.edit_button.UseVisualStyleBackColor = true;
             this.edit_button.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -97,6 +102,7 @@
             this.entry_txtbox.Name = "entry_txtbox";
             this.entry_txtbox.Size = new System.Drawing.Size(130, 22);
             this.entry_txtbox.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.entry_txtbox, "This textbox is used to add an untagged entry");
             this.entry_txtbox.TextChanged += new System.EventHandler(this.entry_txtbox_TextChanged);
             // 
             // enter_button
@@ -107,17 +113,19 @@
             this.enter_button.Size = new System.Drawing.Size(100, 28);
             this.enter_button.TabIndex = 4;
             this.enter_button.Text = "Enter";
+            this.toolTip1.SetToolTip(this.enter_button, "This button adds the entered value to the main list");
             this.enter_button.UseVisualStyleBackColor = true;
             this.enter_button.Click += new System.EventHandler(this.button2_Click);
             // 
             // exit_button
             // 
-            this.exit_button.Location = new System.Drawing.Point(194, 133);
+            this.exit_button.Location = new System.Drawing.Point(193, 154);
             this.exit_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(100, 28);
             this.exit_button.TabIndex = 5;
             this.exit_button.Text = "Exit";
+            this.toolTip1.SetToolTip(this.exit_button, "Used to unload a document");
             this.exit_button.UseVisualStyleBackColor = true;
             // 
             // tagged_listbox
@@ -129,6 +137,7 @@
             this.tagged_listbox.Name = "tagged_listbox";
             this.tagged_listbox.Size = new System.Drawing.Size(159, 196);
             this.tagged_listbox.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.tagged_listbox, "Tagged entries are displayed here");
             // 
             // binary_searchbtn
             // 
@@ -138,6 +147,7 @@
             this.binary_searchbtn.Size = new System.Drawing.Size(125, 28);
             this.binary_searchbtn.TabIndex = 9;
             this.binary_searchbtn.Text = "Binary Search";
+            this.toolTip1.SetToolTip(this.binary_searchbtn, "This button initiates a binary search for the value entered above");
             this.binary_searchbtn.UseVisualStyleBackColor = true;
             this.binary_searchbtn.Click += new System.EventHandler(this.binary_searchbtn_Click);
             // 
@@ -149,17 +159,20 @@
             this.Linear_searchbtn.Size = new System.Drawing.Size(125, 28);
             this.Linear_searchbtn.TabIndex = 10;
             this.Linear_searchbtn.Text = "Linear Search";
+            this.toolTip1.SetToolTip(this.Linear_searchbtn, "This button initiates a Linear search for the value entered above");
             this.Linear_searchbtn.UseVisualStyleBackColor = true;
             this.Linear_searchbtn.Click += new System.EventHandler(this.Linear_searchbtn_Click);
             // 
             // tag_button
             // 
-            this.tag_button.Location = new System.Drawing.Point(339, 532);
+            this.tag_button.Location = new System.Drawing.Point(316, 532);
             this.tag_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tag_button.Name = "tag_button";
-            this.tag_button.Size = new System.Drawing.Size(100, 28);
+            this.tag_button.Size = new System.Drawing.Size(123, 28);
             this.tag_button.TabIndex = 11;
-            this.tag_button.Text = "Tag Plate";
+            this.tag_button.Text = "Tag/Untag Plate";
+            this.toolTip1.SetToolTip(this.tag_button, "This button switches the state of a selected entry to Tagged from Untagged or Vic" +
+        "e versa");
             this.tag_button.UseVisualStyleBackColor = true;
             this.tag_button.Click += new System.EventHandler(this.tag_button_Click);
             // 
@@ -187,12 +200,13 @@
             // 
             // reset_button
             // 
-            this.reset_button.Location = new System.Drawing.Point(338, 133);
+            this.reset_button.Location = new System.Drawing.Point(337, 154);
             this.reset_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(100, 28);
             this.reset_button.TabIndex = 7;
             this.reset_button.Text = "Reset";
+            this.toolTip1.SetToolTip(this.reset_button, "Used to delete all data");
             this.reset_button.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -213,6 +227,7 @@
             this.search_txtbox.Name = "search_txtbox";
             this.search_txtbox.Size = new System.Drawing.Size(181, 22);
             this.search_txtbox.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.search_txtbox, "This textbox is used to input a value you wish to search for");
             // 
             // display_btn
             // 
@@ -222,6 +237,7 @@
             this.display_btn.Size = new System.Drawing.Size(100, 28);
             this.display_btn.TabIndex = 16;
             this.display_btn.Text = "Display";
+            this.toolTip1.SetToolTip(this.display_btn, "This displays data from the main list");
             this.display_btn.UseVisualStyleBackColor = true;
             this.display_btn.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -233,6 +249,7 @@
             this.display_btn2.Size = new System.Drawing.Size(100, 28);
             this.display_btn2.TabIndex = 17;
             this.display_btn2.Text = "Display";
+            this.toolTip1.SetToolTip(this.display_btn2, "This displays data from the tagged list");
             this.display_btn2.UseVisualStyleBackColor = true;
             // 
             // editplate_txtbox
@@ -241,19 +258,22 @@
             this.editplate_txtbox.Name = "editplate_txtbox";
             this.editplate_txtbox.Size = new System.Drawing.Size(133, 22);
             this.editplate_txtbox.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.editplate_txtbox, "This textbox is used to edit selected values or tag a selected value. \r\nNote: Ple" +
+        "ase select an entry from either listbox");
             // 
             // Error_txtbox
             // 
-            this.Error_txtbox.Location = new System.Drawing.Point(38, 187);
+            this.Error_txtbox.Location = new System.Drawing.Point(37, 208);
             this.Error_txtbox.Name = "Error_txtbox";
             this.Error_txtbox.ReadOnly = true;
             this.Error_txtbox.Size = new System.Drawing.Size(401, 22);
             this.Error_txtbox.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.Error_txtbox, "Used to display messages, errors and other useful information from the program");
             // 
             // error_label
             // 
             this.error_label.AutoSize = true;
-            this.error_label.Location = new System.Drawing.Point(40, 168);
+            this.error_label.Location = new System.Drawing.Point(39, 189);
             this.error_label.Name = "error_label";
             this.error_label.Size = new System.Drawing.Size(74, 16);
             this.error_label.TabIndex = 20;
@@ -291,21 +311,23 @@
             // 
             // save_btn
             // 
-            this.save_btn.Location = new System.Drawing.Point(42, 83);
+            this.save_btn.Location = new System.Drawing.Point(40, 105);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(98, 28);
             this.save_btn.TabIndex = 24;
             this.save_btn.Text = "Save";
+            this.toolTip1.SetToolTip(this.save_btn, "Used to save data to the loaded document");
             this.save_btn.UseVisualStyleBackColor = true;
             this.save_btn.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // saveAs_btn
             // 
-            this.saveAs_btn.Location = new System.Drawing.Point(338, 83);
+            this.saveAs_btn.Location = new System.Drawing.Point(337, 105);
             this.saveAs_btn.Name = "saveAs_btn";
             this.saveAs_btn.Size = new System.Drawing.Size(98, 28);
             this.saveAs_btn.TabIndex = 25;
             this.saveAs_btn.Text = "Save As";
+            this.toolTip1.SetToolTip(this.saveAs_btn, "Used to save the data to a new document");
             this.saveAs_btn.UseVisualStyleBackColor = true;
             // 
             // list_search_groupbox
@@ -318,6 +340,7 @@
             this.list_search_groupbox.TabIndex = 26;
             this.list_search_groupbox.TabStop = false;
             this.list_search_groupbox.Text = "Select List to search";
+            this.toolTip1.SetToolTip(this.list_search_groupbox, "These buttons allow you to switch between which list you wish to search");
             this.list_search_groupbox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // search_mainList
@@ -414,6 +437,7 @@
         private System.Windows.Forms.GroupBox list_search_groupbox;
         private System.Windows.Forms.RadioButton search_TaggedList;
         private System.Windows.Forms.RadioButton search_mainList;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
