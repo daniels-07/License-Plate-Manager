@@ -51,13 +51,15 @@
             this.enter_label = new System.Windows.Forms.Label();
             this.edit_label = new System.Windows.Forms.Label();
             this.search_label = new System.Windows.Forms.Label();
+            this.save_btn = new System.Windows.Forms.Button();
+            this.saveAs_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // main_listbox
             // 
             this.main_listbox.FormattingEnabled = true;
             this.main_listbox.ItemHeight = 16;
-            this.main_listbox.Location = new System.Drawing.Point(39, 182);
+            this.main_listbox.Location = new System.Drawing.Point(40, 217);
             this.main_listbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.main_listbox.Name = "main_listbox";
             this.main_listbox.Size = new System.Drawing.Size(159, 196);
@@ -65,7 +67,7 @@
             // 
             // open_button
             // 
-            this.open_button.Location = new System.Drawing.Point(39, 98);
+            this.open_button.Location = new System.Drawing.Point(40, 133);
             this.open_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.open_button.Name = "open_button";
             this.open_button.Size = new System.Drawing.Size(100, 28);
@@ -75,7 +77,7 @@
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(229, 441);
+            this.edit_button.Location = new System.Drawing.Point(230, 476);
             this.edit_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(100, 28);
@@ -86,7 +88,7 @@
             // 
             // entry_txtbox
             // 
-            this.entry_txtbox.Location = new System.Drawing.Point(38, 411);
+            this.entry_txtbox.Location = new System.Drawing.Point(39, 446);
             this.entry_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.entry_txtbox.Name = "entry_txtbox";
             this.entry_txtbox.Size = new System.Drawing.Size(130, 22);
@@ -95,7 +97,7 @@
             // 
             // enter_button
             // 
-            this.enter_button.Location = new System.Drawing.Point(38, 441);
+            this.enter_button.Location = new System.Drawing.Point(39, 476);
             this.enter_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.enter_button.Name = "enter_button";
             this.enter_button.Size = new System.Drawing.Size(100, 28);
@@ -106,7 +108,7 @@
             // 
             // exit_button
             // 
-            this.exit_button.Location = new System.Drawing.Point(193, 98);
+            this.exit_button.Location = new System.Drawing.Point(194, 133);
             this.exit_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exit_button.Name = "exit_button";
             this.exit_button.Size = new System.Drawing.Size(100, 28);
@@ -118,7 +120,7 @@
             // 
             this.tagged_listbox.FormattingEnabled = true;
             this.tagged_listbox.ItemHeight = 16;
-            this.tagged_listbox.Location = new System.Drawing.Point(277, 182);
+            this.tagged_listbox.Location = new System.Drawing.Point(278, 217);
             this.tagged_listbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tagged_listbox.Name = "tagged_listbox";
             this.tagged_listbox.Size = new System.Drawing.Size(159, 196);
@@ -126,7 +128,7 @@
             // 
             // binary_searchbtn
             // 
-            this.binary_searchbtn.Location = new System.Drawing.Point(111, 527);
+            this.binary_searchbtn.Location = new System.Drawing.Point(112, 562);
             this.binary_searchbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.binary_searchbtn.Name = "binary_searchbtn";
             this.binary_searchbtn.Size = new System.Drawing.Size(125, 28);
@@ -137,7 +139,7 @@
             // 
             // Linear_searchbtn
             // 
-            this.Linear_searchbtn.Location = new System.Drawing.Point(244, 527);
+            this.Linear_searchbtn.Location = new System.Drawing.Point(245, 562);
             this.Linear_searchbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Linear_searchbtn.Name = "Linear_searchbtn";
             this.Linear_searchbtn.Size = new System.Drawing.Size(125, 28);
@@ -148,7 +150,7 @@
             // 
             // tag_button
             // 
-            this.tag_button.Location = new System.Drawing.Point(337, 441);
+            this.tag_button.Location = new System.Drawing.Point(338, 476);
             this.tag_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tag_button.Name = "tag_button";
             this.tag_button.Size = new System.Drawing.Size(100, 28);
@@ -181,7 +183,7 @@
             // 
             // reset_button
             // 
-            this.reset_button.Location = new System.Drawing.Point(337, 98);
+            this.reset_button.Location = new System.Drawing.Point(338, 133);
             this.reset_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(100, 28);
@@ -202,7 +204,7 @@
             // 
             // search_txtbox
             // 
-            this.search_txtbox.Location = new System.Drawing.Point(149, 495);
+            this.search_txtbox.Location = new System.Drawing.Point(150, 530);
             this.search_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_txtbox.Name = "search_txtbox";
             this.search_txtbox.Size = new System.Drawing.Size(181, 22);
@@ -210,7 +212,7 @@
             // 
             // display_btn
             // 
-            this.display_btn.Location = new System.Drawing.Point(39, 146);
+            this.display_btn.Location = new System.Drawing.Point(40, 181);
             this.display_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.display_btn.Name = "display_btn";
             this.display_btn.Size = new System.Drawing.Size(100, 28);
@@ -221,7 +223,7 @@
             // 
             // display_btn2
             // 
-            this.display_btn2.Location = new System.Drawing.Point(337, 146);
+            this.display_btn2.Location = new System.Drawing.Point(338, 181);
             this.display_btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.display_btn2.Name = "display_btn2";
             this.display_btn2.Size = new System.Drawing.Size(100, 28);
@@ -231,14 +233,14 @@
             // 
             // editplate_txtbox
             // 
-            this.editplate_txtbox.Location = new System.Drawing.Point(304, 411);
+            this.editplate_txtbox.Location = new System.Drawing.Point(305, 446);
             this.editplate_txtbox.Name = "editplate_txtbox";
             this.editplate_txtbox.Size = new System.Drawing.Size(133, 22);
             this.editplate_txtbox.TabIndex = 18;
             // 
             // Error_txtbox
             // 
-            this.Error_txtbox.Location = new System.Drawing.Point(182, 153);
+            this.Error_txtbox.Location = new System.Drawing.Point(183, 187);
             this.Error_txtbox.Name = "Error_txtbox";
             this.Error_txtbox.ReadOnly = true;
             this.Error_txtbox.Size = new System.Drawing.Size(120, 22);
@@ -247,7 +249,7 @@
             // error_label
             // 
             this.error_label.AutoSize = true;
-            this.error_label.Location = new System.Drawing.Point(179, 134);
+            this.error_label.Location = new System.Drawing.Point(180, 169);
             this.error_label.Name = "error_label";
             this.error_label.Size = new System.Drawing.Size(74, 16);
             this.error_label.TabIndex = 20;
@@ -257,7 +259,7 @@
             // enter_label
             // 
             this.enter_label.AutoSize = true;
-            this.enter_label.Location = new System.Drawing.Point(36, 391);
+            this.enter_label.Location = new System.Drawing.Point(37, 426);
             this.enter_label.Name = "enter_label";
             this.enter_label.Size = new System.Drawing.Size(118, 16);
             this.enter_label.TabIndex = 21;
@@ -267,7 +269,7 @@
             // edit_label
             // 
             this.edit_label.AutoSize = true;
-            this.edit_label.Location = new System.Drawing.Point(301, 391);
+            this.edit_label.Location = new System.Drawing.Point(302, 426);
             this.edit_label.Name = "edit_label";
             this.edit_label.Size = new System.Drawing.Size(98, 16);
             this.edit_label.TabIndex = 22;
@@ -277,18 +279,39 @@
             // search_label
             // 
             this.search_label.AutoSize = true;
-            this.search_label.Location = new System.Drawing.Point(146, 475);
+            this.search_label.Location = new System.Drawing.Point(147, 510);
             this.search_label.Name = "search_label";
             this.search_label.Size = new System.Drawing.Size(153, 16);
             this.search_label.TabIndex = 23;
             this.search_label.Text = "Enter value to search for:";
+            // 
+            // save_btn
+            // 
+            this.save_btn.Location = new System.Drawing.Point(42, 83);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Size = new System.Drawing.Size(98, 28);
+            this.save_btn.TabIndex = 24;
+            this.save_btn.Text = "Save";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // saveAs_btn
+            // 
+            this.saveAs_btn.Location = new System.Drawing.Point(338, 83);
+            this.saveAs_btn.Name = "saveAs_btn";
+            this.saveAs_btn.Size = new System.Drawing.Size(98, 28);
+            this.saveAs_btn.TabIndex = 25;
+            this.saveAs_btn.Text = "Save As";
+            this.saveAs_btn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(475, 570);
+            this.ClientSize = new System.Drawing.Size(475, 613);
+            this.Controls.Add(this.saveAs_btn);
+            this.Controls.Add(this.save_btn);
             this.Controls.Add(this.search_label);
             this.Controls.Add(this.edit_label);
             this.Controls.Add(this.enter_label);
@@ -345,6 +368,8 @@
         private System.Windows.Forms.Label enter_label;
         private System.Windows.Forms.Label edit_label;
         private System.Windows.Forms.Label search_label;
+        private System.Windows.Forms.Button save_btn;
+        private System.Windows.Forms.Button saveAs_btn;
     }
 }
 
