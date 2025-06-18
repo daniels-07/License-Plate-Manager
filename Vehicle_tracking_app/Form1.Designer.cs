@@ -63,7 +63,7 @@
             // 
             this.main_listbox.FormattingEnabled = true;
             this.main_listbox.ItemHeight = 16;
-            this.main_listbox.Location = new System.Drawing.Point(40, 217);
+            this.main_listbox.Location = new System.Drawing.Point(41, 273);
             this.main_listbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.main_listbox.Name = "main_listbox";
             this.main_listbox.Size = new System.Drawing.Size(159, 196);
@@ -81,7 +81,7 @@
             // 
             // edit_button
             // 
-            this.edit_button.Location = new System.Drawing.Point(230, 476);
+            this.edit_button.Location = new System.Drawing.Point(231, 532);
             this.edit_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edit_button.Name = "edit_button";
             this.edit_button.Size = new System.Drawing.Size(100, 28);
@@ -92,7 +92,7 @@
             // 
             // entry_txtbox
             // 
-            this.entry_txtbox.Location = new System.Drawing.Point(39, 446);
+            this.entry_txtbox.Location = new System.Drawing.Point(40, 502);
             this.entry_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.entry_txtbox.Name = "entry_txtbox";
             this.entry_txtbox.Size = new System.Drawing.Size(130, 22);
@@ -101,7 +101,7 @@
             // 
             // enter_button
             // 
-            this.enter_button.Location = new System.Drawing.Point(39, 476);
+            this.enter_button.Location = new System.Drawing.Point(40, 532);
             this.enter_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.enter_button.Name = "enter_button";
             this.enter_button.Size = new System.Drawing.Size(100, 28);
@@ -124,7 +124,7 @@
             // 
             this.tagged_listbox.FormattingEnabled = true;
             this.tagged_listbox.ItemHeight = 16;
-            this.tagged_listbox.Location = new System.Drawing.Point(278, 217);
+            this.tagged_listbox.Location = new System.Drawing.Point(279, 273);
             this.tagged_listbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tagged_listbox.Name = "tagged_listbox";
             this.tagged_listbox.Size = new System.Drawing.Size(159, 196);
@@ -132,7 +132,7 @@
             // 
             // binary_searchbtn
             // 
-            this.binary_searchbtn.Location = new System.Drawing.Point(39, 571);
+            this.binary_searchbtn.Location = new System.Drawing.Point(39, 618);
             this.binary_searchbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.binary_searchbtn.Name = "binary_searchbtn";
             this.binary_searchbtn.Size = new System.Drawing.Size(125, 28);
@@ -143,7 +143,7 @@
             // 
             // Linear_searchbtn
             // 
-            this.Linear_searchbtn.Location = new System.Drawing.Point(40, 607);
+            this.Linear_searchbtn.Location = new System.Drawing.Point(40, 654);
             this.Linear_searchbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Linear_searchbtn.Name = "Linear_searchbtn";
             this.Linear_searchbtn.Size = new System.Drawing.Size(125, 28);
@@ -154,7 +154,7 @@
             // 
             // tag_button
             // 
-            this.tag_button.Location = new System.Drawing.Point(338, 476);
+            this.tag_button.Location = new System.Drawing.Point(339, 532);
             this.tag_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tag_button.Name = "tag_button";
             this.tag_button.Size = new System.Drawing.Size(100, 28);
@@ -208,7 +208,7 @@
             // 
             // search_txtbox
             // 
-            this.search_txtbox.Location = new System.Drawing.Point(40, 541);
+            this.search_txtbox.Location = new System.Drawing.Point(40, 588);
             this.search_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.search_txtbox.Name = "search_txtbox";
             this.search_txtbox.Size = new System.Drawing.Size(181, 22);
@@ -216,7 +216,7 @@
             // 
             // display_btn
             // 
-            this.display_btn.Location = new System.Drawing.Point(40, 181);
+            this.display_btn.Location = new System.Drawing.Point(41, 237);
             this.display_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.display_btn.Name = "display_btn";
             this.display_btn.Size = new System.Drawing.Size(100, 28);
@@ -227,7 +227,7 @@
             // 
             // display_btn2
             // 
-            this.display_btn2.Location = new System.Drawing.Point(338, 181);
+            this.display_btn2.Location = new System.Drawing.Point(339, 237);
             this.display_btn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.display_btn2.Name = "display_btn2";
             this.display_btn2.Size = new System.Drawing.Size(100, 28);
@@ -237,23 +237,23 @@
             // 
             // editplate_txtbox
             // 
-            this.editplate_txtbox.Location = new System.Drawing.Point(305, 446);
+            this.editplate_txtbox.Location = new System.Drawing.Point(306, 502);
             this.editplate_txtbox.Name = "editplate_txtbox";
             this.editplate_txtbox.Size = new System.Drawing.Size(133, 22);
             this.editplate_txtbox.TabIndex = 18;
             // 
             // Error_txtbox
             // 
-            this.Error_txtbox.Location = new System.Drawing.Point(183, 187);
+            this.Error_txtbox.Location = new System.Drawing.Point(38, 187);
             this.Error_txtbox.Name = "Error_txtbox";
             this.Error_txtbox.ReadOnly = true;
-            this.Error_txtbox.Size = new System.Drawing.Size(120, 22);
+            this.Error_txtbox.Size = new System.Drawing.Size(401, 22);
             this.Error_txtbox.TabIndex = 19;
             // 
             // error_label
             // 
             this.error_label.AutoSize = true;
-            this.error_label.Location = new System.Drawing.Point(180, 169);
+            this.error_label.Location = new System.Drawing.Point(40, 168);
             this.error_label.Name = "error_label";
             this.error_label.Size = new System.Drawing.Size(74, 16);
             this.error_label.TabIndex = 20;
@@ -263,7 +263,7 @@
             // enter_label
             // 
             this.enter_label.AutoSize = true;
-            this.enter_label.Location = new System.Drawing.Point(37, 426);
+            this.enter_label.Location = new System.Drawing.Point(38, 482);
             this.enter_label.Name = "enter_label";
             this.enter_label.Size = new System.Drawing.Size(118, 16);
             this.enter_label.TabIndex = 21;
@@ -273,7 +273,7 @@
             // edit_label
             // 
             this.edit_label.AutoSize = true;
-            this.edit_label.Location = new System.Drawing.Point(302, 426);
+            this.edit_label.Location = new System.Drawing.Point(303, 482);
             this.edit_label.Name = "edit_label";
             this.edit_label.Size = new System.Drawing.Size(98, 16);
             this.edit_label.TabIndex = 22;
@@ -283,7 +283,7 @@
             // search_label
             // 
             this.search_label.AutoSize = true;
-            this.search_label.Location = new System.Drawing.Point(40, 521);
+            this.search_label.Location = new System.Drawing.Point(40, 568);
             this.search_label.Name = "search_label";
             this.search_label.Size = new System.Drawing.Size(153, 16);
             this.search_label.TabIndex = 23;
@@ -312,7 +312,7 @@
             // 
             this.list_search_groupbox.Controls.Add(this.search_TaggedList);
             this.list_search_groupbox.Controls.Add(this.search_mainList);
-            this.list_search_groupbox.Location = new System.Drawing.Point(238, 557);
+            this.list_search_groupbox.Location = new System.Drawing.Point(238, 604);
             this.list_search_groupbox.Name = "list_search_groupbox";
             this.list_search_groupbox.Size = new System.Drawing.Size(200, 84);
             this.list_search_groupbox.TabIndex = 26;
@@ -347,7 +347,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(475, 653);
+            this.ClientSize = new System.Drawing.Size(475, 697);
             this.Controls.Add(this.list_search_groupbox);
             this.Controls.Add(this.saveAs_btn);
             this.Controls.Add(this.save_btn);

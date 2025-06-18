@@ -140,7 +140,7 @@ namespace Vehicle_tracking_app
         private void enter_entry(object sender, EventArgs e)
         {
             string new_entry = entry_txtbox.Text.Trim();
-            string pattern = @"^[A-Z]{3}[0-9]{3}$";
+            string pattern = @"^[A-Za-z0-9]{6,7}$";
 
             if (string.IsNullOrEmpty(new_entry)) //Check if the entry is empty
             {
@@ -230,7 +230,7 @@ namespace Vehicle_tracking_app
 
         private void edit(object sender, EventArgs e)
         {
-            string pattern = @"^[A-Z]{3}[0-9]{3}$";
+            string pattern = @"^[A-Z][0-9]{2,4}[A-Z][0-9]{2,4}$";
             string newEdit = editplate_txtbox.Text.Trim();
 
             if (selectedIndex == -1 || string.IsNullOrEmpty(selectedList))
@@ -327,7 +327,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Z]{3}[0-9]{3}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{6,7}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
@@ -373,7 +373,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Z]{3}[0-9]{3}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{6,7}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
