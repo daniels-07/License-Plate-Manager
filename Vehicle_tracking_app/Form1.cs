@@ -250,7 +250,7 @@ namespace Vehicle_tracking_app
         private void edit(object sender, EventArgs e)
         {
             // Validate the input for editing
-            string pattern = @"^[A-Z][0-9]{2,4}[A-Z][0-9]{2,4}$";
+            string pattern = @"^[A-Za-z0-9]{6,7}$";
             string newEdit = editplate_txtbox.Text.Trim();
 
             if (selectedIndex == -1 || string.IsNullOrEmpty(selectedList))
