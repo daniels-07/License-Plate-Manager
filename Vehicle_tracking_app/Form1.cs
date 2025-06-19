@@ -381,7 +381,7 @@ namespace Vehicle_tracking_app
                 if (index >= 0)
                 {
                     Error_txtbox.Text = $"Found '{searchEntry}' at index {index} in the tagged list.";
-                    main_listbox.SelectedIndex = index;
+                    tagged_listbox.SelectedIndex = index;
                 }
                 else
                 {
