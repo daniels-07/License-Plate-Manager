@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -424,6 +425,7 @@ namespace Vehicle_tracking_app
                             main_listbox.Items.Add(cleaned);
                         }
                         isfound = true;
+                        main_listbox.SelectedIndex = i;
                         break;
                     }
                 }
@@ -449,6 +451,7 @@ namespace Vehicle_tracking_app
                             tagged_listbox.Items.Add(cleaned);
                         }
                         isfound = true;
+                        tagged_listbox.SelectedIndex = i;
                         break;
                     }
                 }
