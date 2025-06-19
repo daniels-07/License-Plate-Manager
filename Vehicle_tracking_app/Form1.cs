@@ -169,7 +169,7 @@ namespace Vehicle_tracking_app
                 string prefix = File.Exists(filepath) && new FileInfo(filepath).Length > 0 ? Environment.NewLine: "";
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Entry added successfully!";
-                main.Add("[UnTagged] " + new_entry);
+                main.Add("[UnTagged]" + new_entry);
                 main = main.OrderBy(line => line.Substring("[UnTagged]".Length).Trim()).ToList();
             }
             else
