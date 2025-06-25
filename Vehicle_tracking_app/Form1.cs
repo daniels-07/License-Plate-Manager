@@ -94,6 +94,7 @@ namespace Vehicle_tracking_app
         {
             // Open a file dialog and select a file
             OpenFileDialog openFile = new OpenFileDialog();
+            openFile.InitialDirectory = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
             openFile.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             openFile.Title = "Please select a file";
             if (openFile.ShowDialog() == DialogResult.OK)
@@ -273,6 +274,10 @@ namespace Vehicle_tracking_app
             {
                 // Update the main list
                 main[selectedIndex] = "[UnTagged]" + newEdit;
+                main_listbox.Items.Clear();
+                tagged_listbox.Items.Clear();
+                display_main_list(sender, e); 
+                display_tagged_list(sender, e); 
             }
             else if (selectedList == "tagged")
             {
@@ -314,11 +319,13 @@ namespace Vehicle_tracking_app
         {
             // Save the contents of the main and tagged list as a new text document
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             saveFileDialog.Title = "Save File As";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 filepath = saveFileDialog.FileName;
+
                 File.WriteAllLines(filepath, main.Concat(tagged));
                 Error_txtbox.Clear();
                 Error_txtbox.Text = $"File saved as: {filepath}";
@@ -489,6 +496,11 @@ namespace Vehicle_tracking_app
                 tagged.Add("[Tagged]" + selectedText);
 
                 Error_txtbox.Text = $"Tagged: {selectedText}";
+
+                main_listbox.Items.Clear();
+                tagged_listbox.Items.Clear();
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
             else
             {
@@ -496,6 +508,11 @@ namespace Vehicle_tracking_app
                 main.Add("[UnTagged]" + selectedText);
 
                 Error_txtbox.Text = $"Untagged: {selectedText}";
+
+                main_listbox.Items.Clear();
+                tagged_listbox.Items.Clear();
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
 
             // Refresh the listboxes and sort the lists
