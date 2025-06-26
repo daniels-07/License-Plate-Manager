@@ -12,10 +12,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 // Daniel Shadbolt
-// Date: 19/06/2025
-// Version: 1.0
+// Date: 26/06/2025
+// Version: 1.1
 // Vehicle Tracking Application
 // This program is used to keep track of license plate numbers, it allows the user to tag, untag, edit, delete, search for and add license plates.
 
@@ -89,6 +90,29 @@ namespace Vehicle_tracking_app
                 linear_search(s, args);
             };
 
+        }
+        public string GetNextFileName(string directory, string extension = ".txt")
+        {
+            string pattern_file = @"day_(\d{2})" + Regex.Escape(extension);
+            Regex regex = new Regex(pattern_file);
+            int max_number = 0;
+
+            foreach (var file in Directory.GetFiles(directory, "day_*" + extension))
+            {
+                var filename = Path.GetFileName(file);
+                Match match = regex.Match(filename);
+                if (match.Success)
+                {
+                    if (int.TryParse(match.Groups[1].Value, out int number))
+                    {
+                        max_number = Math.Max(max_number, number);
+                    }
+                }
+            }
+            int next_number = max_number + 1;
+            string nextFilename = $"day_{next_number:D2}{extension}";
+
+            return Path.Combine(directory, nextFilename);
         }
         private void load_file(object sender, EventArgs e)
         {
@@ -328,10 +352,17 @@ namespace Vehicle_tracking_app
         private void saveAs(object sender, EventArgs e)
         {
             // Save the contents of the main and tagged list as a new text document
+            string directory = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
+            string saveName = GetNextFileName(directory);
+            string fullPath = GetNextFileName(directory);
+            string suggestedName = Path.GetFileName(fullPath);
+
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             saveFileDialog.Title = "Save File As";
+            saveFileDialog.FileName = suggestedName;
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 filepath = saveFileDialog.FileName;
