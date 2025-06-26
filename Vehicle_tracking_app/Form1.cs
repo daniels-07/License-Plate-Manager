@@ -61,14 +61,6 @@ namespace Vehicle_tracking_app
             {
                 exit(s, args);
             };              
-            display_btn.Click += (s, args) =>
-            {
-                display_main_list(s, args);
-            };
-            display_btn2.Click += (s, args) =>
-            {
-                display_tagged_list(s, args);
-            };
             reset_button.Click += (s, args) =>
             {
                 reset(s, args);
@@ -132,6 +124,8 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Clear();
                 Error_txtbox.Text = $"You have selected: {filepath}";
 
+                main_listbox.Items.Clear();
+                tagged_listbox.Items.Clear();
                 display_main_list(sender, e);
                 display_tagged_list(sender, e);
             }
@@ -210,6 +204,9 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Entry added successfully!";
                 main.Add("[UnTagged]" + new_entry);
                 main = main.OrderBy(line => line.Substring("[UnTagged]".Length).Trim()).ToList();
+
+                main_listbox.Items.Clear();
+                tagged_listbox.Items.Clear();
                 display_main_list(sender, e);
                 display_tagged_list(sender, e);
             }
@@ -310,19 +307,33 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a valid number plate";
                 return;
             }
+            if (main.Any(x => x.Equals("[UnTagged]" + newEdit, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the main list
+            {
+                Error_txtbox.Clear();
+                Error_txtbox.Text = "Duplicate entry detected in the main list";
+                return;
+            }
+            if (tagged.Any(x => x.Equals("[Tagged]" + newEdit, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the tagged list
+            {
+                Error_txtbox.Clear();
+                Error_txtbox.Text = "Duplicate entry detected in the tagged list";
+                return;
+            }
             if (selectedList == "main")
             {
                 // Update the main list
                 main[selectedIndex] = "[UnTagged]" + newEdit;
+
                 main_listbox.Items.Clear();
                 tagged_listbox.Items.Clear();
-                display_main_list(sender, e); 
-                display_tagged_list(sender, e); 
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
             else if (selectedList == "tagged")
             {
                 // Update the tagged list
                 tagged[selectedIndex] = "[Tagged]" + newEdit;
+
                 main_listbox.Items.Clear();
                 tagged_listbox.Items.Clear();
                 display_main_list(sender, e);
