@@ -150,7 +150,8 @@ namespace Vehicle_tracking_app
         private void enter_entry(object sender, EventArgs e)
         {
             string new_entry = entry_txtbox.Text.Trim();
-            string pattern = @"^[A-Za-z0-9]{6,7}$";
+            //string pattern = @"^[A-Za-z0-9]{6,7}$";
+            string pattern = @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$";
 
             if (string.IsNullOrEmpty(new_entry)) // Check if the entry is empty
             {
@@ -252,7 +253,7 @@ namespace Vehicle_tracking_app
         private void edit(object sender, EventArgs e)
         {
             // Validate the input for editing
-            string pattern = @"^[A-Za-z0-9]{6,7}$";
+            string pattern = @"^[A-Za-z0-9]{3-4}-[A-Za-z0-9]{3-4}$";
             string newEdit = editplate_txtbox.Text.Trim();
 
             if (selectedIndex == -1 || string.IsNullOrEmpty(selectedList))
@@ -347,6 +348,8 @@ namespace Vehicle_tracking_app
                 filepath = "";
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Closing loaded file";
+                main.Clear();
+                tagged.Clear();
             }
             else if (result == DialogResult.Cancel)
             {
@@ -362,7 +365,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{6,7}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3-4}-[A-Za-z0-9]{3-4}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
@@ -411,7 +414,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{6,7}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3-4}-[A-Za-z0-9]{3-4}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
