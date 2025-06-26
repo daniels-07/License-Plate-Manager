@@ -190,12 +190,12 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Please enter a valid number plate";
             }
-            else if (!main.Any(x => x.Equals(new_entry, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the main list
+            else if (main.Any(x => x.Equals("[UnTagged]" + new_entry, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the main list
             {
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Duplicate entry detected in the main list";
             }
-            else if (!tagged.Any(x => x.Equals(new_entry, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the tagged list
+            else if (tagged.Any(x => x.Equals("[Tagged]" + new_entry, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the tagged list
             {
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Duplicate entry detected in the tagged list";
