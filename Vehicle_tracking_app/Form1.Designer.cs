@@ -34,7 +34,6 @@
             this.edit_button = new System.Windows.Forms.Button();
             this.entry_txtbox = new System.Windows.Forms.TextBox();
             this.enter_button = new System.Windows.Forms.Button();
-            this.exit_button = new System.Windows.Forms.Button();
             this.tagged_listbox = new System.Windows.Forms.ListBox();
             this.binary_searchbtn = new System.Windows.Forms.Button();
             this.Linear_searchbtn = new System.Windows.Forms.Button();
@@ -108,16 +107,6 @@
             this.toolTip1.SetToolTip(this.enter_button, "This button adds the entered value to the main list");
             this.enter_button.UseVisualStyleBackColor = true;
             this.enter_button.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // exit_button
-            // 
-            this.exit_button.Location = new System.Drawing.Point(145, 125);
-            this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(75, 23);
-            this.exit_button.TabIndex = 5;
-            this.exit_button.Text = "Exit";
-            this.toolTip1.SetToolTip(this.exit_button, "Used to unload a document");
-            this.exit_button.UseVisualStyleBackColor = true;
             // 
             // tagged_listbox
             // 
@@ -213,7 +202,7 @@
             // editplate_txtbox
             // 
             this.editplate_txtbox.Location = new System.Drawing.Point(230, 408);
-            this.editplate_txtbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editplate_txtbox.Margin = new System.Windows.Forms.Padding(2);
             this.editplate_txtbox.Name = "editplate_txtbox";
             this.editplate_txtbox.Size = new System.Drawing.Size(101, 20);
             this.editplate_txtbox.TabIndex = 18;
@@ -223,7 +212,7 @@
             // Error_txtbox
             // 
             this.Error_txtbox.Location = new System.Drawing.Point(28, 169);
-            this.Error_txtbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Error_txtbox.Margin = new System.Windows.Forms.Padding(2);
             this.Error_txtbox.Name = "Error_txtbox";
             this.Error_txtbox.ReadOnly = true;
             this.Error_txtbox.Size = new System.Drawing.Size(302, 20);
@@ -276,7 +265,7 @@
             // save_btn
             // 
             this.save_btn.Location = new System.Drawing.Point(30, 85);
-            this.save_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save_btn.Margin = new System.Windows.Forms.Padding(2);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(74, 23);
             this.save_btn.TabIndex = 24;
@@ -288,7 +277,7 @@
             // saveAs_btn
             // 
             this.saveAs_btn.Location = new System.Drawing.Point(253, 85);
-            this.saveAs_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveAs_btn.Margin = new System.Windows.Forms.Padding(2);
             this.saveAs_btn.Name = "saveAs_btn";
             this.saveAs_btn.Size = new System.Drawing.Size(74, 23);
             this.saveAs_btn.TabIndex = 25;
@@ -301,9 +290,9 @@
             this.list_search_groupbox.Controls.Add(this.search_TaggedList);
             this.list_search_groupbox.Controls.Add(this.search_mainList);
             this.list_search_groupbox.Location = new System.Drawing.Point(178, 491);
-            this.list_search_groupbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.list_search_groupbox.Margin = new System.Windows.Forms.Padding(2);
             this.list_search_groupbox.Name = "list_search_groupbox";
-            this.list_search_groupbox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.list_search_groupbox.Padding = new System.Windows.Forms.Padding(2);
             this.list_search_groupbox.Size = new System.Drawing.Size(150, 68);
             this.list_search_groupbox.TabIndex = 26;
             this.list_search_groupbox.TabStop = false;
@@ -315,7 +304,7 @@
             // 
             this.search_TaggedList.AutoSize = true;
             this.search_TaggedList.Location = new System.Drawing.Point(4, 38);
-            this.search_TaggedList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_TaggedList.Margin = new System.Windows.Forms.Padding(2);
             this.search_TaggedList.Name = "search_TaggedList";
             this.search_TaggedList.Size = new System.Drawing.Size(81, 17);
             this.search_TaggedList.TabIndex = 1;
@@ -327,7 +316,7 @@
             // 
             this.search_mainList.AutoSize = true;
             this.search_mainList.Location = new System.Drawing.Point(4, 17);
-            this.search_mainList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_mainList.Margin = new System.Windows.Forms.Padding(2);
             this.search_mainList.Name = "search_mainList";
             this.search_mainList.Size = new System.Drawing.Size(67, 17);
             this.search_mainList.TabIndex = 0;
@@ -359,7 +348,6 @@
             this.Controls.Add(this.binary_searchbtn);
             this.Controls.Add(this.tagged_listbox);
             this.Controls.Add(this.reset_button);
-            this.Controls.Add(this.exit_button);
             this.Controls.Add(this.enter_button);
             this.Controls.Add(this.entry_txtbox);
             this.Controls.Add(this.edit_button);
@@ -381,7 +369,6 @@
         private System.Windows.Forms.Button edit_button;
         private System.Windows.Forms.TextBox entry_txtbox;
         private System.Windows.Forms.Button enter_button;
-        private System.Windows.Forms.Button exit_button;
         private System.Windows.Forms.ListBox tagged_listbox;
         private System.Windows.Forms.Button binary_searchbtn;
         private System.Windows.Forms.Button Linear_searchbtn;

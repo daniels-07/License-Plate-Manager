@@ -33,6 +33,8 @@ namespace Vehicle_tracking_app
         public Form1()
         {
             InitializeComponent();
+            this.FormClosing += Form1_FormClosing;
+
             main_listbox.MouseDoubleClick += main_listbox_MouseDoubleClick;
             tagged_listbox.MouseDoubleClick += tagged_listbox_MouseDoubleClick;
             main_listbox.MouseClick += main_listbox_MouseClick;
@@ -56,11 +58,7 @@ namespace Vehicle_tracking_app
             enter_button.Click += (s, args) =>
              {
                  enter_entry(s, args);
-             };
-            exit_button.Click += (s, args) =>
-            {
-                exit(s, args);
-            };              
+             };           
             reset_button.Click += (s, args) =>
             {
                 reset(s, args);
@@ -393,34 +391,20 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = $"File saved as: {filepath}";
             }
         }
-        private void exit(object sender, EventArgs e)
+        private void Form1_FormClosing(Object Sender, FormClosingEventArgs e)
         {
-            // Unload the selected file
             DialogResult result = MessageBox.Show("Do you want to save before exiting?", "Exit Confirmation", MessageBoxButtons.YesNoCancel);
             if (result == DialogResult.Yes)
             {
-                save(sender, e);
-                filepath = "";
-                Error_txtbox.Clear();
-                Error_txtbox.Text = "Closing loaded file";
-                main.Clear();
-                tagged.Clear();
-                display_main_list(sender, e);
-                display_tagged_list(sender, e);
+                saveAs(null, e);
             }
             else if (result == DialogResult.No)
             {
-                filepath = "";
-                Error_txtbox.Clear();
-                Error_txtbox.Text = "Closing loaded file";
-                main.Clear();
-                tagged.Clear();
-                display_main_list(sender, e);
-                display_tagged_list(sender, e);
+
             }
             else if (result == DialogResult.Cancel)
             {
-                return;
+                e.Cancel = true;
             }
         }
         private void binary_search(object sender, EventArgs e)
@@ -676,6 +660,11 @@ namespace Vehicle_tracking_app
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
         {
 
         }
