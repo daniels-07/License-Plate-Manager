@@ -241,6 +241,10 @@ namespace Vehicle_tracking_app
                     main.Remove("[UnTagged]" + selectedItem);
                     //File.WriteAllLines(filepath, main.Concat(tagged));
                     Error_txtbox.Text = $"Deleted entry: {selectedItem}";
+                    main_listbox.Items.Clear();
+                    tagged_listbox.Items.Clear();
+                    display_main_list(sender, e);
+                    display_tagged_list(sender, e);
                 }
             }
         }
@@ -258,6 +262,10 @@ namespace Vehicle_tracking_app
                     tagged.Remove("[Tagged]" + selectedItem);
                     //File.WriteAllLines(filepath, main.Concat(main));
                     Error_txtbox.Text = $"Deleted entry: {selectedItem}";
+                    main_listbox.Items.Clear();
+                    tagged_listbox.Items.Clear();
+                    display_main_list(sender, e);
+                    display_tagged_list(sender, e);
                 }
             }
         }
