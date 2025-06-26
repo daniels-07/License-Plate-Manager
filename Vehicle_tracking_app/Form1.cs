@@ -107,6 +107,9 @@ namespace Vehicle_tracking_app
 
                 Error_txtbox.Clear();
                 Error_txtbox.Text = $"You have selected: {filepath}";
+
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
         }
         private void display_main_list(object sender, EventArgs e)
@@ -173,6 +176,8 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Entry added successfully!";
                 main.Add("[UnTagged]" + new_entry);
                 main = main.OrderBy(line => line.Substring("[UnTagged]".Length).Trim()).ToList();
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
             else
             {
@@ -253,7 +258,7 @@ namespace Vehicle_tracking_app
         private void edit(object sender, EventArgs e)
         {
             // Validate the input for editing
-            string pattern = @"^[A-Za-z0-9]{3-4}-[A-Za-z0-9]{3-4}$";
+            string pattern = @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$";
             string newEdit = editplate_txtbox.Text.Trim();
 
             if (selectedIndex == -1 || string.IsNullOrEmpty(selectedList))
@@ -284,6 +289,10 @@ namespace Vehicle_tracking_app
             {
                 // Update the tagged list
                 tagged[selectedIndex] = "[Tagged]" + newEdit;
+                main_listbox.Items.Clear();
+                tagged_listbox.Items.Clear();
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
             else
             {
@@ -342,6 +351,10 @@ namespace Vehicle_tracking_app
                 filepath = "";
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Closing loaded file";
+                main.Clear();
+                tagged.Clear();
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
             else if (result == DialogResult.No)
             {
@@ -350,6 +363,8 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Closing loaded file";
                 main.Clear();
                 tagged.Clear();
+                display_main_list(sender, e);
+                display_tagged_list(sender, e);
             }
             else if (result == DialogResult.Cancel)
             {
@@ -365,7 +380,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3-4}-[A-Za-z0-9]{3-4}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
@@ -414,7 +429,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3-4}-[A-Za-z0-9]{3-4}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
