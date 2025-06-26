@@ -178,7 +178,7 @@ namespace Vehicle_tracking_app
         {
             string new_entry = entry_txtbox.Text.Trim();
             //string pattern = @"^[A-Za-z0-9]{6,7}$";
-            string pattern = @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$";
+            string pattern = @"^[A-Za-z0-9]{4}-[A-Za-z0-9]{3}$";
 
             if (string.IsNullOrEmpty(new_entry)) // Check if the entry is empty
             {
@@ -190,12 +190,22 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Please enter a valid number plate";
             }
+            else if (!main.Any(x => x.Equals(new_entry, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the main list
+            {
+                Error_txtbox.Clear();
+                Error_txtbox.Text = "Duplicate entry detected in the main list";
+            }
+            else if (!tagged.Any(x => x.Equals(new_entry, StringComparison.OrdinalIgnoreCase))) // Check for duplicate entries in the tagged list
+            {
+                Error_txtbox.Clear();
+                Error_txtbox.Text = "Duplicate entry detected in the tagged list";
+            }
             else if (!string.IsNullOrEmpty(new_entry))
             {
                 string entrywithtag = "[UnTagged]" + new_entry;
 
                 //Check if the file has content
-                string prefix = File.Exists(filepath) && new FileInfo(filepath).Length > 0 ? Environment.NewLine: "";
+                string prefix = File.Exists(filepath) && new FileInfo(filepath).Length > 0 ? Environment.NewLine : "";
                 Error_txtbox.Clear();
                 Error_txtbox.Text = "Entry added successfully!";
                 main.Add("[UnTagged]" + new_entry);
@@ -282,7 +292,7 @@ namespace Vehicle_tracking_app
         private void edit(object sender, EventArgs e)
         {
             // Validate the input for editing
-            string pattern = @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$";
+            string pattern = @"^[A-Za-z0-9]{4}-[A-Za-z0-9]{3}$";
             string newEdit = editplate_txtbox.Text.Trim();
 
             if (selectedIndex == -1 || string.IsNullOrEmpty(selectedList))
@@ -411,7 +421,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{4}-[A-Za-z0-9]{3}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
@@ -460,7 +470,7 @@ namespace Vehicle_tracking_app
                 Error_txtbox.Text = "Please enter a value to search for.";
                 return;
             }
-            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{3,4}-[A-Za-z0-9]{3,4}$"))
+            if (!Regex.IsMatch(searchEntry, @"^[A-Za-z0-9]{4}-[A-Za-z0-9]{3}$"))
             {
                 Error_txtbox.Text = "Please enter a valid number plate.";
                 return;
